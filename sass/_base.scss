@@ -1,0 +1,117 @@
+/*Colors
+primary: #2980B9; 
+Primary Light:#4ea1d8
+Primary dark :#1d5a81
+
+
+Grey light 1:#cfd6d9
+Grey light 2:#c5ced2
+Grey light 3:#b2bec3
+
+
+Grey dark 1:#a8b6bc
+Grey dark 2:#9faeb4
+Grey dark 3:#95a6ad
+
+
+
+
+
+*/
+  :root {
+    --color-Primary: #2980B9; 
+    --color-Primary-Light:#4ea1d8;
+    --color-Primary-dark :#1d5a81;
+
+   
+    --color-Grey-light-1:#cfd6d9;
+    --color--Grey-light-2:#c5ced2;
+    --color--Grey-light-3:#b2bec3;
+
+    --color-Grey-dark-1:#a8b6bc;
+    --color-Grey-dark-2:#9faeb4;
+    --color-Grey-dark-3:#95a6ad;
+    --color-branco:#FFFFFF;
+    --color-azul-claro:#6DD5FA;
+    --color-hover:#bfedfd;
+    --color-azul-escuro:#2980B9;
+     --color-roxo:#6d6bcf;
+
+    --shadow-dark:0 2rem 6rem rgba(0,0,0,0.3);
+
+    
+
+
+}
+*{
+    margin: 0;
+    padding: 0;
+
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;//1rem =10px,10px/16px=62.5%
+
+@include respond(phone) {
+    font-size: 50%;
+}
+@include respond(tab-port) {
+    font-size: 60%;
+}
+@include respond(tab-land) {
+    font-size: 70%;
+}
+@include respond(big-desktop) {
+    font-size: 80%;
+}
+
+}
+
+
+body {
+
+    font-family: 'Roboto', sans-serif;
+     font-weight: 400;
+    line-height: 1.6;
+     background:linear-gradient(to right, #2980b9, #6dd5fa, var(--color-branco)
+     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    min-height: 100vh;
+}
+
+//////////////mixix
+@mixin clearfix  {
+    &::after{
+        content:"";
+        display: table;
+        clear: both;
+    }
+}
+@mixin absCenter {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+}
+/////midia mixi
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone{
+        @media (max-width: 600px) {@content};
+    }
+    @if $breakpoint == tab-port{
+        @media (max-width: 900px) {@content};
+    }
+    @if $breakpoint == tab-land{
+        @media (max-width: 1200px) {@content};
+    }
+    @if $breakpoint == big-desktop{
+        @media (min-width: 1800px) {@content};
+    }
+}

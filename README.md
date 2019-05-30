@@ -1,5 +1,4 @@
 # cardvingadores4
-# cardvingadores4
-# vingadores
-# vingadores
-# vingadores
+# 
+voce vai precissa do node.js 
+live-server para poder ver os svg
